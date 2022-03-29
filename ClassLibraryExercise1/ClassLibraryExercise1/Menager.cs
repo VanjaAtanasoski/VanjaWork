@@ -2,26 +2,26 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-public class Manager : Employee
+namespace ClassLibraryExercise1
 {
-    public Manager(string FirstName, string LastName, int v, Role other) : base(FirstName, LastName, 500, Role.Sales)
+    public class Manager : Employee
     {
-    }
-    private double bonus { get; set; }
-    public int department;
-    public Menager(int department)
-    {
-        department = department;
-    }
+        public Manager(string FirstName, string LastName, int v, Role Menager) : base(FirstName, LastName, 500, Role.Sales)
+        {
+        }
+        private double bonus { get; set; }
+        public int department;
+        
 
-    public double AddBonus()
-    {
-        return bonus;
-    }
+        public double AddBonus()
+        {
+            return bonus;
+        }
 
-    public override double GetSalary(double Salary, double bonus)
-    {
-        Salary = Salary + bonus;
-        return Salary;
+        public override double GetSalary(double Salary, double bonus)
+        {
+            Salary = Salary + bonus;
+            return Salary;
+        }
     }
 }
