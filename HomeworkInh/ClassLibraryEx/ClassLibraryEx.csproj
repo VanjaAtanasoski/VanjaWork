@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -10,3 +11,17 @@
   </ItemGroup>
 
 </Project>
+=======
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryExercise1\ClassLibraryExercise1.csproj" />
+  </ItemGroup>
+
+</Project>
+>>>>>>> 0651355c5fd48b66e2830bf84ce55b4f912118f0
