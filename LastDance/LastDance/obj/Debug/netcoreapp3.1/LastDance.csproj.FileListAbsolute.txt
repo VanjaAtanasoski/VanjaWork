@@ -1,0 +1,14 @@
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\obj\Debug\netcoreapp3.1\LastDance.csproj.AssemblyReference.cache
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\obj\Debug\netcoreapp3.1\LastDance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\obj\Debug\netcoreapp3.1\LastDance.AssemblyInfoInputs.cache
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\obj\Debug\netcoreapp3.1\LastDance.AssemblyInfo.cs
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\obj\Debug\netcoreapp3.1\LastDance.csproj.CoreCompileInputs.cache
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\bin\Debug\netcoreapp3.1\LastDance.exe
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\bin\Debug\netcoreapp3.1\LastDance.deps.json
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\bin\Debug\netcoreapp3.1\LastDance.runtimeconfig.json
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\bin\Debug\netcoreapp3.1\LastDance.runtimeconfig.dev.json
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\bin\Debug\netcoreapp3.1\LastDance.dll
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\bin\Debug\netcoreapp3.1\LastDance.pdb
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\obj\Debug\netcoreapp3.1\LastDance.dll
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\obj\Debug\netcoreapp3.1\LastDance.pdb
+C:\Users\Vanja.Atanasoski\source\repos\LastDance\LastDance\obj\Debug\netcoreapp3.1\LastDance.genruntimeconfig.cache
