@@ -70,11 +70,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\Services\\TaxiManager9000.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\Services\\TaxiManager9000.Services.csproj",
       "projectName": "TaxiManager9000.Services",
-      "projectPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\Services\\TaxiManager9000.Services.csproj",
+      "projectPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\Services\\TaxiManager9000.Services.csproj",
       "packagesPath": "C:\\Users\\Vanja.Atanasoski\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\Services\\obj\\",
+      "outputPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vanja.Atanasoski\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -91,14 +91,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\DataAccess\\TaxiManager9000.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\DataAccess\\TaxiManager9000.DataAccess.csproj"
+            "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\DataAccess\\TaxiManager9000.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\DataAccess\\TaxiManager9000.DataAccess.csproj"
             },
-            "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\Domain\\TaxiManager9000.Domain.csproj": {
-              "projectPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\Domain\\TaxiManager9000.Domain.csproj"
+            "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\Domain\\TaxiManager9000.Domain.csproj": {
+              "projectPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\Domain\\TaxiManager9000.Domain.csproj"
             },
-            "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\TaxiManager9000.Shared\\TaxiManager9000.Shared.csproj": {
-              "projectPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\NewTaxiManager9000\\G2\\Workshop\\TaxiManager9000\\TaxiManager9000.Shared\\TaxiManager9000.Shared.csproj"
+            "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\TaxiManager9000.Shared\\TaxiManager9000.Shared.csproj": {
+              "projectPath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\TaxiManager9000.Shared\\TaxiManager9000.Shared.csproj"
             }
           }
         }

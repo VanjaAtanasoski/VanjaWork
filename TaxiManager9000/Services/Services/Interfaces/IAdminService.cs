@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaxiManager9000.Domain.Entities;
+﻿using TaxiManager9000.Domain.Entities;
+using TaxiManager9000.Domain.Enums;
 
-namespace TaxiManager9000.Services.Services.Interfaces
+namespace TaxiManager9000.Services.Interfaces
 {
     public interface IAdminService
     {
-        void CreateUser(User user);
-        bool CheckPassword(User user);
+        void AddUser(string userName, string password, Role role);
+
+        void TerminateUser(string userName);
+
+        void ChangePassword(string userName, string password);
     }
 }

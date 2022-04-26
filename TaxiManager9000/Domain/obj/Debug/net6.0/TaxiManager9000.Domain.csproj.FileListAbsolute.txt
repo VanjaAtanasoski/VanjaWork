@@ -1,5 +1,0 @@
-C:\Users\Vanja.Atanasoski\source\repos\NewTaxiManager9000\G2\Workshop\TaxiManager9000\Domain\obj\Debug\net6.0\TaxiManager9000.Domain.csproj.AssemblyReference.cache
-C:\Users\Vanja.Atanasoski\source\repos\NewTaxiManager9000\G2\Workshop\TaxiManager9000\Domain\obj\Debug\net6.0\TaxiManager9000.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Vanja.Atanasoski\source\repos\NewTaxiManager9000\G2\Workshop\TaxiManager9000\Domain\obj\Debug\net6.0\TaxiManager9000.Domain.AssemblyInfoInputs.cache
-C:\Users\Vanja.Atanasoski\source\repos\NewTaxiManager9000\G2\Workshop\TaxiManager9000\Domain\obj\Debug\net6.0\TaxiManager9000.Domain.AssemblyInfo.cs
-C:\Users\Vanja.Atanasoski\source\repos\NewTaxiManager9000\G2\Workshop\TaxiManager9000\Domain\obj\Debug\net6.0\TaxiManager9000.Domain.csproj.CoreCompileInputs.cache
