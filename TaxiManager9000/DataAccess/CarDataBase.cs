@@ -1,31 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaxiManager9000.DataAccess.Interface;
+﻿using TaxiManager9000.DataAccess.Interface;
 using TaxiManager9000.Domain.Entities;
 
 namespace TaxiManager9000.DataAccess
 {
-    public class CarDataBase : ICarDataBase
+    public class CarDatabase : Database<Car>, ICarDatabase
     {
-        private readonly List<Car> _cars;
-      
-
-        public CarDataBase()
+        public CarDatabase() : base()
         {
-            _cars =new List<Car>();
+            Seed();
         }
 
-        public void AddCar(Car car)
+        private void Seed()
         {
-            _cars.Add(car);
-
-        }
-        public List<Car> ListCars()
-        {
-            return _cars;
+            _items.AddRange(new List<Car>()
+            {
+                new Car("Ford", "SK200AB", DateTime.UtcNow.AddDays(100)),
+                new Car("Mazda", "BT300RU", DateTime.UtcNow.AddDays(30)),
+                new Car("KIA", "RE150BG", DateTime.UtcNow.AddDays(-40)),
+                new Car("Bugatti", "BE1111BE", DateTime.UtcNow.AddDays(-200)),
+            });
         }
     }
 }

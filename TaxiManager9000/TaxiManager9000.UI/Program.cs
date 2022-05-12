@@ -5,38 +5,45 @@ using TaxiManager9000.Domain.Exceptions;
 using TaxiManager9000.Domain.Utils;
 using TaxiManager9000.Services;
 using TaxiManager9000.Services.Interfaces;
+using TaxiManager9000.Services.Services;
+using TaxiManager9000.Services.Services.Interfaces;
 using TaxiManager9000.UI.Helpers;
 using TaxiManager9000.UI.Utils;
 
 IAuthService authService = new AuthService();
+IMaintainanceService maintainanceService = new MaintainanceService();
 IAdminService adminService = new AdminService();
+IManagerSerevice managerService = new ManagerService();
 
-StartApplication(authService, adminService);
+StartApplication(authService, adminService, maintainanceService,managerService);
 
 Console.ReadLine();
 
-void StartApplication(IAuthService authService, IAdminService adminService)
+void StartApplication(IAuthService authService, IAdminService adminService, IMaintainanceService maintainanceService,IManagerSerevice managerSerevice)
 {
     ShowLogin(authService);
-    ShowMenu(authService, adminService);
+    ShowMenu(authService, adminService, maintainanceService,managerSerevice);
 }
 
-void ShowMenu(IAuthService authService, IAdminService adminService)
+void ShowMenu(IAuthService authService, IAdminService adminService, IMaintainanceService maintainanceService,IManagerSerevice managerSerevice)
 {
-    switch (authService.CurrentUser.Role)
+    if (authService.CurrentUser != null)
     {
-        case Role.Administrator:
-            ShowAdminMenu(adminService);
-            break;
-        case Role.Maintainance:
-            ShowMaintainenceMenu(authService);
-            break;
-        case Role.Manager:
-            ShowManagerMenu(authService);
-            break;
-        default:
-            ConsoleUtils.WriteLineInColor($"Invalid role, {authService.CurrentUser.Role}", ConsoleColor.Red);
-            break;
+        switch (authService.CurrentUser.Role)
+        {
+            case Role.Administrator:
+                ShowAdminMenu(adminService);
+                break;
+            case Role.Maintainance:
+                ShowMaintainenceMenu(maintainanceService);
+                break;
+            case Role.Manager:
+                ShowManagerMenu(managerService);
+                break;
+            default:
+                ConsoleUtils.WriteLineInColor($"Invalid role, {authService.CurrentUser.Role}", ConsoleColor.Red);
+                break;
+        }
     }
 }
 
@@ -63,6 +70,9 @@ void ShowAdminMenu(IAdminService adminService)
             }
         case AdminMenuOptions.TERMINATE_USER:
             {
+                Console.WriteLine("All users:");
+                adminService.ListAllUsers().ForEach(x => Console.WriteLine(x.UserName));
+
                 Console.WriteLine("Enter username");
                 string userName = Console.ReadLine();
 
@@ -77,9 +87,10 @@ void ShowAdminMenu(IAdminService adminService)
                 Console.WriteLine("Enter password");
                 string password = Console.ReadLine();
 
-                Console.WriteLine("Enter new Password");
+                Console.WriteLine("Enter new password");
                 string newPassword = Console.ReadLine();
 
+                adminService.ChangePassword(userName, password, newPassword);
                 break;
             }
         default:
@@ -87,14 +98,111 @@ void ShowAdminMenu(IAdminService adminService)
     }
 }
 
-void ShowMaintainenceMenu(IAuthService authService)
+void ShowMaintainenceMenu(IMaintainanceService maintainanceService)
 {
-    throw new NotImplementedException();
+    Console.WriteLine($"{MaintainenceMenuOptions.LIST_ALL_CARS}) List All Cars \n{MaintainenceMenuOptions.LICENSE_PLATE_STATUS}) Lincense plate status");
+    string input = Console.ReadLine();
+
+    switch (input)
+    {
+        case MaintainenceMenuOptions.LIST_ALL_CARS:
+            {
+                List<Car> cars = maintainanceService.ListAllCars();
+                foreach (Car car in cars)
+                {
+                    Console.WriteLine($"{car.Id}) {car.Model} with license plate {car.LicensePlate} and utilized {car.GetShiftPercentageUtilization().ToString("0.##")}%");
+                }
+                break;
+            }
+        case MaintainenceMenuOptions.LICENSE_PLATE_STATUS:
+            {
+      
+
+                List<Car> cars = maintainanceService.ListAllCars();
+
+                foreach (Car car in cars)
+                {
+                    if (!car.IsLicensePlateExpired())
+                    {
+                        if (car.LicensePlateExpiryDate.AddDays(90) < DateTime.Now)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            car.GetInfo();
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            car.GetInfo();
+                            Console.ResetColor();
+                        }
+
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        car.GetInfo();
+                        Console.ResetColor();
+                    }
+                }
+                break;
+            }
+        default:
+            throw new ArgumentOutOfRangeException("Invalid input");
+    }
 }
 
-void ShowManagerMenu(IAuthService authService)
+void ShowManagerMenu(IManagerSerevice managerService)
 {
-    throw new NotImplementedException();
+    Console.WriteLine($"{ManagerMenuOptions.LIST_ALL_DRIVERS}) List All Drivers \n{ManagerMenuOptions.TAXI_LICENSE_DRIVERS}) Lincense plate status");
+    string input = Console.ReadLine();
+    switch (input)
+    {
+        case ManagerMenuOptions.LIST_ALL_DRIVERS:
+            {
+                List<Driver> drivers = managerService.ListAllDrivers();
+                foreach (Driver driver in drivers)
+                {
+                    Console.WriteLine($"{driver.Id}) {driver.FirstName} {driver.LastName}with license {driver.License}");
+
+                   
+                }
+                break;
+            }
+        case ManagerMenuOptions.TAXI_LICENSE_DRIVERS:
+            {
+                List<Driver> drivers = managerService.ListAllDrivers();
+
+                foreach (Driver driver in drivers)
+                {
+                    if (!driver.IsLicensePlateExpired())
+                    {
+                        if (driver.LicensePlateExpiryDate.AddDays(90) < DateTime.Now)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            driver.GetInfo();
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            driver.GetInfo();
+                            Console.ResetColor();
+                        }
+
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        driver.GetInfo();
+                        Console.ResetColor();
+                    }
+                }
+                break;
+            }
+        default:
+            throw new ArgumentOutOfRangeException("Invalid input");
+    }
 }
 
 void ShowLogin(IAuthService authService)

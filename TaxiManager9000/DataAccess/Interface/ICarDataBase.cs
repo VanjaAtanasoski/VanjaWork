@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaxiManager9000.Domain.Entities;
+﻿using TaxiManager9000.Domain.Entities;
 
 namespace TaxiManager9000.DataAccess.Interface
 {
-    public interface ICarDataBase
-
+    public interface ICarDatabase : IDatabase<Car>
     {
-         void AddCar(Car car);
-
-         List<Car> ListCars();
-
     }
 }
