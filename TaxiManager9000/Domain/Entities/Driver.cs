@@ -1,20 +1,26 @@
-﻿using TaxiManager9000.Domain.Enums;
+﻿using Newtonsoft.Json;
+using TaxiManager9000.Domain.Enums;
 
 namespace TaxiManager9000.Domain.Entities
 {
     public class Driver : BaseEntity
     {
-        public Driver(Shift shift, string firstName, string lastName, Car car, DateTime license, DateTime licensePlateExpiryDate)
+        [JsonConstructor]
+        
+        public Driver(Shift shift, string firstName, string lastName, DateTime license, DateTime licensePlateExpiryDate, Car? car = null) :base()
         {
+            Id = -1;
             Shift = shift;
+           
             FirstName = firstName;
-            LastName = lastName;
-            Car = car;
+            LastName = lastName;  
             License = license;
+            Car = car;
             LicensePlateExpiryDate = licensePlateExpiryDate;
         }
 
         public Shift Shift { get; set; }
+      
 
         public string FirstName{get;set;}
         public string LastName { get; set; }
@@ -33,6 +39,11 @@ namespace TaxiManager9000.Domain.Entities
                 return false;
             }
             return true;
+        }
+
+        public override string ToString()
+        {
+            return $"{Id} - {FirstName} - {LastName}";
         }
     }
 }

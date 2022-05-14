@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zji1qVd2wr30p/d3XNU3g5nB7bcCxnhfXyf5NG+gCUYoDMbI931Jfc5IJjoJTHVRn8UOUJqYSW0SvXcNeMfoBQ==",
+  "dgSpecHash": "SJbSDQ0fQSEp5RNp8akTKdSvOXpOkatFCmC+TZlLfaA45R6EUEukXSI50WfVHdxZj8l5dn1cEB890xZHemavHg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vanja.Atanasoski\\source\\repos\\VanjaWork\\TaxiManager9000\\DataAccess\\TaxiManager9000.DataAccess.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Vanja.Atanasoski\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -26,6 +26,8 @@ namespace TaxiManager9000.DataAccess
 
         private void Seed()
         {
+
+
             _users.AddRange(new List<User>()
             {
                 AutoIncrementId(new User("test0", "test1", Domain.Enums.Role.Administrator)),
@@ -33,6 +35,7 @@ namespace TaxiManager9000.DataAccess
                 AutoIncrementId(new User("test2", "test1", Domain.Enums.Role.Maintainance)),
                 AutoIncrementId(new User("test3", "test1", Domain.Enums.Role.Administrator))
             });
+
         }
     }
 }

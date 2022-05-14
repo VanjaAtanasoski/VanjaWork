@@ -1,4 +1,7 @@
-﻿namespace TaxiManager9000.Domain.Entities
+﻿using Newtonsoft.Json;
+
+namespace TaxiManager9000.Domain.Entities
+
 {
     public class Car : BaseEntity
     {
@@ -9,22 +12,21 @@
         public DateTime LicensePlateExpiryDate { get; set; }
 
         public List<Driver> AssignedDrivers { get; set; }
+       
 
         // A car can be created without drivers being assigned to it
-        public Car(string model, string licensePlate, DateTime licensePlateExpiryDate)
-        {
-            Model = model;
-            LicensePlate = licensePlate;
-            LicensePlateExpiryDate = licensePlateExpiryDate;
-            AssignedDrivers = new List<Driver>();
-        }
 
-        public Car(string model, string licensePlate, DateTime licensePlateExpiryDate, List<Driver> assignedDrivers)
+
+
+        [JsonConstructor]
+
+        public Car(string model, string licensePlate, DateTime licensePlateExpiryDate):base()
         {
+            Id = -1;
             Model = model;
             LicensePlate = licensePlate;
             LicensePlateExpiryDate = licensePlateExpiryDate;
-            AssignedDrivers = assignedDrivers;
+           
         }
 
         public decimal GetShiftPercentageUtilization()

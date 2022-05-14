@@ -1,4 +1,5 @@
-﻿using TaxiManager9000.Domain.Enums;
+﻿using Newtonsoft.Json;
+using TaxiManager9000.Domain.Enums;
 
 namespace TaxiManager9000.Domain.Entities
 {
@@ -20,6 +21,9 @@ namespace TaxiManager9000.Domain.Entities
         /// <param name="userName"></param>
         /// <param name="password"></param>
         /// <param name="role"></param>
+        /// 
+        [JsonConstructor]
+      
         public User(string userName, string password, Role role) : base()
         {
             if (userName.Length < USERNAME_MIN_LENGTH)
@@ -28,7 +32,7 @@ namespace TaxiManager9000.Domain.Entities
             }
 
             ValidatePassword(password);
-
+            Id = -1;
             UserName = userName;
             Password = password;
             Role = role;

@@ -154,7 +154,7 @@ void ShowMaintainenceMenu(IMaintainanceService maintainanceService)
 
 void ShowManagerMenu(IManagerSerevice managerService)
 {
-    Console.WriteLine($"{ManagerMenuOptions.LIST_ALL_DRIVERS}) List All Drivers \n{ManagerMenuOptions.TAXI_LICENSE_DRIVERS}) Lincense plate status");
+    Console.WriteLine($"{ManagerMenuOptions.LIST_ALL_DRIVERS}) List All Drivers \n{ManagerMenuOptions.TAXI_LICENSE_DRIVERS}) Lincense plate status \n{ManagerMenuOptions.ASSIGN_DRIVERS}) List Assigned Drivers \n{ManagerMenuOptions.UNASSIGN_DRIVERS}) List Unassigned Drivers");
     string input = Console.ReadLine();
     switch (input)
     {
@@ -198,6 +198,18 @@ void ShowManagerMenu(IManagerSerevice managerService)
                         Console.ResetColor();
                     }
                 }
+                break;
+            }
+        case ManagerMenuOptions.ASSIGN_DRIVERS:
+            {
+                managerService.ListAllDrivers().Where(x => x.Car == null).ToList().ForEach(Console.WriteLine);
+
+                break;
+            }
+        case ManagerMenuOptions.UNASSIGN_DRIVERS:
+            {
+                managerService.ListAllDrivers().Where(x => x.Car != null).ToList().ForEach(Console.WriteLine);
+
                 break;
             }
         default:

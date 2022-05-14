@@ -3,8 +3,11 @@
     public abstract class BaseEntity
     {
         public int Id { get; set; }
-
-        public BaseEntity()
+        protected BaseEntity(int id)
+        {
+            Id = id;
+        }
+        protected BaseEntity()
         {
             Id = -1;
         }
